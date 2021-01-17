@@ -1,0 +1,4 @@
+all: exp_epic
+
+exp_epic: expepic/*.cpp expepic/*.h
+		g++ expepic/aim.cpp -Wall -std=c++0x -O3 expepic/sfmt/SFMT.c -o exp_epic

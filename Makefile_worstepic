@@ -1,0 +1,5 @@
+all: worst_epic
+
+
+worst_epic: worstepic/*.cpp worstepic/*.h
+		g++ worstepic/aim.cpp -Wall -std=c++0x -O3 worstepic/sfmt/SFMT.c -o worst_epic
