@@ -9,7 +9,7 @@ Linux-based OS
 # How to run
 
 ## Running command
-./algo -dataset path_to_dataset -model IC -epsilon $\epsilon$ -k seed_number -batch batch_size -seedfile filename -time time_number
+./algo -dataset path_to_dataset -model IC -epsilon ε -k seed_number -batch batch_size -seedfile filename -time time_number
 
 ## Explain
 --epsilon:  an float number in range (0,1) to control the approximation error.
@@ -27,3 +27,6 @@ Linux-based OS
 ./exp_epic -dataset dataset/hep/ -model IC -epsilon 0.5 -k 500 -batch 50 -seedfile seed -time 1
 
 
+# Datasets
+
+Tested datasets can be downloaded [here](To be uploaded).
