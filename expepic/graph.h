@@ -16,7 +16,7 @@ public:
 
     vector<vector<int>> gT;
 	vector<vector<double>> probT; 
-	//vector<vector<unsigned int>> probT;
+	
 
     enum InfluModel {IC, LT};
     InfluModel influModel;
@@ -91,18 +91,15 @@ public:
         ASSERT(readCnt == m);
 		rc = munmap(ptr, length);
 		close(fd);
-        //fclose(fin);
+        
     }
 
     Graph(string folder, string graph_file): folder(folder), graph_file(graph_file)
-    {
-		//UI_MAX = 4294967295U;
-
+    {		
 		readNM();
 
 		gT = vector<vector<int>>(n, vector<int>());
-		probT = vector<vector<double>>(n, vector<double>());
-		//probT = vector<vector<unsigned int>>(n, vector<unsigned int>());
+		probT = vector<vector<double>>(n, vector<double>());		
 
 		readGraph();
     }

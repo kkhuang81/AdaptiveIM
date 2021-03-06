@@ -28,8 +28,7 @@ public:
     InfGraph(string folder, string graph_file): Graph(folder, graph_file)
     {
         srand(time(NULL));
-        sfmt_init_gen_rand(&sfmtSeed , rand());
-		//sfmt_init_gen_rand(&sfmtSeed, 95082); //By using a determined seed number, we could debug without randomness.
+        sfmt_init_gen_rand(&sfmtSeed , rand());		
 
         visit = vector<bool> (n);
         visit_mark = vector<int> (n);
@@ -40,8 +39,7 @@ public:
 		iota(curNodeIdx.begin(), curNodeIdx.end(), 0);
 		NumcurNode = n;
 
-		active_set = vector<bool>(n, false);		
-		//node_influence = vector<int>(n, 0);
+		active_set = vector<bool>(n, false);				
 
 		hyperG.resize(n, vector<int>());		
 
@@ -81,8 +79,7 @@ public:
 
 		string file_name = arg.dataset + arg.dataset.substr(index1, index2 - index1) + "_" + index;
 
-		if (influModel == LT)file_name += "_lt";
-		//cout << file_name << endl;
+		if (influModel == LT)file_name += "_lt";		
 
 		size_t length;
 		auto ptr = map_file(file_name.c_str(), length);
@@ -151,10 +148,7 @@ public:
 
 	double build_seedset(int targetSize, vector<int>&batch_set)
 	{
-		//int tep_t;
-		//cout << "input one integer: ";
-		//cin >> tep_t;
-		//vector<uint32_t> coverage(n, 0); //this type definition is terrible and buggy, do not do it again!
+		
 		vector<int> coverage(n, 0);
 		size_t maxDeg = 0;
 		for (auto i = n; i--;)
@@ -202,7 +196,7 @@ public:
 		double sumInf = 0;
 
 		batch_set.clear();
-		//cout << batch_set.size() << ": boundMin: " << boundMin << endl;// " sumTopk:" << sumTopk << endl;
+		
 		/*
 		* sortedNode: position -> node
 		* nodePosition: node -> position
