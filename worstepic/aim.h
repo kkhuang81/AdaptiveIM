@@ -42,28 +42,23 @@ class AIM
 			const double ai = log(2 * i_max / delta);
 
 			double sample = (log(2 / delta) + Math::logcnk(left_n, batch)) / batch;
-
-			//cout << "sample: " << sample << "\ti_max:" << i_max << endl;
+			
 			vector<int>batch_set;
 
 			for (int i = 0; i < i_max; i++)			
 			{
 				//Generate R1 and derive the seed set
 				g.build_hyper_graph_r((int64)sample);
-				//cout << "size: " << (int64)(sample) << endl;
+				
 				batch_set.clear();
 				//calculate the upper bound here
 				double influence = g.build_seedset(batch, batch_set);  //we need to be careful here.							
 							    
 				double cover = g.Coverage(sample, batch_set);				
 
-				double lower = sqr(sqrt(cover + 2. * ai / 9.) - sqrt(ai / 2.)) - ai / 18;
-				//double upper = sqr(sqrt(influence / factor + a2 / 2.) + sqrt(a2 / 2.));
-				
-				//if (g.hyperGT.size() != g.hyperGT_2.size())cout << "ALERT" << endl;
-				double ratio = lower / influence;
-				//cout << "lower " << lower << " influence " << influence << " ratio " << ratio << endl;
-				//cout << influence << "\t" << g.hyperGT.size() << "\t" << lower << "\t" << g.hyperGT_2.size() << "\t" << ratio << endl;
+				double lower = sqr(sqrt(cover + 2. * ai / 9.) - sqrt(ai / 2.)) - ai / 18;				
+								
+				double ratio = lower / influence;				
 
 				if (ratio > alpha*(1. - epsilon_prime))
 				{				
@@ -110,11 +105,9 @@ public:
 				while (g.seedSet.size() < arg.k)  //set the eta as 1;
  				{							
 					left_n = g.NumcurNode;
-					const double delta = 0.01*epsilon_ast*arg.batch / left_n;
-					//const double epsilon_prime = (arg.epsilon - factor*delta) / (1 - delta);
+					const double delta = 0.01*epsilon_ast*arg.batch / left_n;					
 					const double epsilon_prime = 1.*(arg.batch*epsilon_ast - delta*left_n) / (arg.batch - delta*left_n);
-					const double epsilon_a = epsilon_prime / (1 - epsilon_prime);
-					//cout << "epsilon_prime: " << epsilon_prime << " epsilon_prime: " << epsilon_prime << endl;
+					const double epsilon_a = epsilon_prime / (1 - epsilon_prime);					
 					AdaptiveSelect(g, arg, alpha, epsilon_prime, delta, epsilon_a);
 				}
 
@@ -126,8 +119,7 @@ public:
 
 				cout << "SingleSpread " << g.n - g.NumcurNode << endl;
 				cout << "SingleRuntime " << (double)interval.count() << endl;				
-            }            
-			//cout << "SampleTime(s) " << g.rand_time / arg.time << endl;
+            }            			
 			cout << "RunningTime(s) " << total_time / arg.time << endl;
             disp_mem_usage();
 			cout << "TotalSample " << rr_num / arg.time << endl;

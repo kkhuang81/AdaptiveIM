@@ -82,16 +82,14 @@ public:
 
             ASSERT( a < n );
             ASSERT( b < n );
-			
-			//probT[b].push_back((unsigned int)(p*UI_MAX));
+						
 			probT[b].push_back(p);
 			gT[b].push_back(a);			
         }        
 
         ASSERT(readCnt == m);
 		rc = munmap(ptr, length);
-		close(fd);
-        //fclose(fin);
+		close(fd);     
     }
 
     Graph(string folder, string graph_file): folder(folder), graph_file(graph_file)
@@ -101,8 +99,7 @@ public:
 		readNM();
 
 		gT = vector<vector<int>>(n, vector<int>());
-		probT = vector<vector<double>>(n, vector<double>());
-		//probT = vector<vector<unsigned int>>(n, vector<unsigned int>());
+		probT = vector<vector<double>>(n, vector<double>());		
 
 		readGraph();
     }
