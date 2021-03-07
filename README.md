@@ -1,6 +1,6 @@
 # Algorithms for Adaptive Influence Maximization
 
-Codes for the EptAIM, i.e., the adaptive algorithm for adaptive IM problem that provides expected approximation ratio. More details refer to paper: https://arxiv.org/abs/2004.06469. (Notice that this **VLDBJ 2020** is the latest version of our work on Adaptive IM.)
+Codes for the EptAIM, i.e., the adaptive algorithm for adaptive IM problem that provides expected approximation ratio. More details refer to paper: https://arxiv.org/abs/2004.06469. (Notice that this **VLDBJ 2020** paper is the latest version of our work on Adaptive IM.)
 
 
 
