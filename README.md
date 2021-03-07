@@ -16,6 +16,8 @@ Linux-based OS
 
 **Realizations files**: please refer to $\textit{Tools}$ repository for source code to generate realizations.
 
+*Remark*: please note that generated realization files are supposed to locate in the same folder of dataset file according to my implementation.
+
 
 
 ### How to run
