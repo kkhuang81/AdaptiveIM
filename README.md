@@ -50,5 +50,5 @@ Tested datasets can be downloaded in $\textit{Tested-Dataset}$ repository.
 
 ### Remark
 
-If there are any problems, please contact khuang005@ntu.edu.sg / kkhuang@nus.edu.sg.
+If there are any problems, please contact khuang005@ntu.edu.sg / kkhuang@nus.edu.sg. (https://sites.google.com/view/kekehuang/)
 
